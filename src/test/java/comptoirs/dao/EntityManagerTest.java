@@ -61,6 +61,6 @@ public class EntityManagerTest {
 		Categorie cat = em.find(Categorie.class, 98);
 		var produits = cat.getProduits();
 		// On a chargé également tous les produits de cette catégorie
-		assertEquals(3, produits.size(), "La catégorie a 3 produits dans le jeu de test");
+		assertEquals(7, produits.size(), "La catégorie a 7 produits dans le jeu de test");
 	}
 }
