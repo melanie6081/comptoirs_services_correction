@@ -27,7 +27,7 @@ public class LigneService {
 
     /**
      * <pre>
-     * Service métier : 
+     * Service métier :
      *     Enregistre une nouvelle ligne de commande pour une commande connue par sa clé,
      *     Incrémente la quantité totale commandée (Produit.unitesCommandees) avec la quantite à commander
      * Règles métier :
@@ -37,14 +37,14 @@ public class LigneService {
      *     - la quantité doit être positive
      *     - On doit avoir une quantite en stock du produit suffisante
      * <pre>
-     * 
+     *
      *  @param commandeNum la clé de la commande
      *  @param produitRef la clé du produit
      *  @param quantite la quantité commandée (positive)
      *  @return la ligne de commande créée
      */
     @Transactional
-    Ligne ajouterLigne(Integer commandeNum, Integer produitRef, @Positive int quantite) {
+    public Ligne ajouterLigne(Integer commandeNum, Integer produitRef, @Positive int quantite) {
         // On vérifie que le produit existe
         var produit = produitDao.findById(produitRef).orElseThrow();
         // On  vérifie que le produit n'est pas marqué indisponible
