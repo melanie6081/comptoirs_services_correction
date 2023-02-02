@@ -30,7 +30,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void listerLesEntites()  {
 		log.info("Lister les entités");
 		List<Categorie> liste = categoryDAO.findAll(); // Renvoie la liste des entités dans la table
@@ -39,7 +38,6 @@ class CategorieRepositoryTest {
 	}
 	
 	@Test
-	@Sql("small_data.sql")
 	void listerCustomQuery() {
 		log.info("Chercher des entités avec une requête 'custom' Spring");
 		String substring = "prod";
@@ -51,7 +49,6 @@ class CategorieRepositoryTest {
 	}
 	
 	@Test
-	@Sql("small_data.sql")
 	void touverParCle()  {
 		log.info("Trouver une entité par sa clé");
 		int codePresent = 98;
@@ -64,7 +61,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void entiteInconnue()  {
 		log.info("Chercher une entité inconnue");
 		int codeInconnu = 9;
@@ -73,7 +69,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void creerUneEntite()  {
 		log.info("Créer une entité");
 		Categorie nouvelle = new Categorie();
@@ -87,7 +82,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void modifierEntite()  {
 		log.info("Modifier une entité");
 		int codePresent = 98;
@@ -105,7 +99,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void erreurCreationEntite() {
 		log.info("Créer une entité avec erreur");
 		Categorie nouvelle = new Categorie();
@@ -122,7 +115,6 @@ class CategorieRepositoryTest {
 	}
 
 	@Test
-	@Sql("small_data.sql")
 	void onNePeutPasDetruireUneCategorieQuiADesProduits() {
 		log.info("Détruire une catégorie avec des produits");
 		int codeCategorieAvecDesProduits = 98;
